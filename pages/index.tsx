@@ -16,12 +16,12 @@ export default function Home() {
       <Header />
 
       <main>
-        <div className="w-full h-[600px] z-10 overflow-hidden">
+        <div className="flex items-center flex-col h-[560px]">
           <div className="w-full h-full">
             <div className="absolute w-full h-full z-2 bg-slate-500 bg-opacity-30">
 
             </div>
-            <video className="w-full" autoPlay loop muted>
+            <video className="w-full h-full object-cover" autoPlay loop muted controls={false}>
               <source src="./slide-1.mp4" />
             </video>
           </div>
