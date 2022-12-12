@@ -1,8 +1,6 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-
 import { Header, Footer } from '../components'
+import { HomeContainer } from './../container'
 
 export default function Home() {
   return (
@@ -16,16 +14,7 @@ export default function Home() {
       <Header />
 
       <main>
-        <div className="flex items-center flex-col h-[560px]">
-          <div className="w-full h-full">
-            <div className="absolute w-full h-full z-2 bg-slate-500 bg-opacity-30">
-
-            </div>
-            <video className="w-full h-full object-cover" autoPlay loop muted controls={false}>
-              <source src="./slide-1.mp4" />
-            </video>
-          </div>
-        </div>
+        <HomeContainer />
       </main>
       <Footer />
     </div>
