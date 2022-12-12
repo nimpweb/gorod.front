@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const LoginBlock = () => {
   return (
-    <div className="absolute z-20 flex flex-col right-5 shadow-xl bg-white rounded-2xl p-5" style={{width: '300px', height: '280px', top: '120px'}}>
+    <div className="z-20 flex flex-col right-5 shadow-xl bg-white rounded-2xl p-5" style={{width: '300px', height: '280px', top: '120px'}}>
       <h1 className="font-bold uppercase text-center text-slate-700">Авторизация</h1>
 
       <form className="mt-5">

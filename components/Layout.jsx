@@ -15,7 +15,7 @@ const Layout = ( { pageTitle, children } ) => {
       <header>
         <Header />
       </header>
-      <main className="pt-20 pb-10">
+      <main className="pt-20 pb-10 bg-slate-100">
         {children}
       </main>
       <Footer />

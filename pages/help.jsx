@@ -8,13 +8,40 @@ export default function Help() {
   >
     <Container>
       <h1 className="font-bold text-xl text-center mb-5">Инструкции по работе с &quot;Удобными платежами&quot;</h1>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore officia itaque nemo dignissimos, odit ex ea omnis nam debitis unde harum. Voluptates repellat sit illum odit, nihil ad nesciunt delectus.
-      Fugiat distinctio perferendis facilis quam enim at qui, accusamus laborum? Officiis nesciunt et consequuntur enim? Quo unde, voluptatum beatae omnis sunt odio vero totam sit eius repellendus nisi dolore tempore.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate beatae, aliquid architecto nam id iste placeat? Nesciunt atque ea aliquam facere nemo labore sint reiciendis magnam necessitatibus explicabo, minus ipsam.
-      Inventore quae iste quibusdam tempora, error deserunt laboriosam quos nihil delectus fugit esse suscipit. Ipsam animi quibusdam similique quae dolorem eaque error inventore corrupti harum quaerat, molestiae, hic vitae. Nisi?
-      Quidem fugit aspernatur, veritatis facere explicabo nemo doloribus et quam neque voluptatum, eos cum minima? Dolor error, quas odit earum consequatur accusantium nisi ratione dicta cupiditate, repellendus perspiciatis cumque reiciendis!
-      Aliquid, voluptates rerum? Eveniet modi, consequuntur, omnis ipsa sit tempora veniam nulla amet id iusto rem eligendi, corporis ex? Suscipit beatae quos animi quas doloribus distinctio excepturi sapiente. Eveniet, amet!
-      Repellendus nemo laborum, praesentium iusto deserunt nulla enim dolore aliquid qui repudiandae. Quo hic eius eaque? Sunt, pariatur in! Itaque commodi enim non doloremque animi tempora deserunt quisquam, neque pariatur!</p>
+      <h2 className="text-left font-bold mt-5 mb-5 text-xl">Часто задаваемые вопросы</h2>
+      <ul>
+        <li className="divide-slate-500 mb-5">
+          <h3 className="font-semibold uppercase">Что делать если заплатил на неверный лицевой счет?</h3>
+          <p className="px-5 text-justify">Вам нужно обратиться к получателю средств (Поставщику услуги) для переноса платежа с неверного лицевого счета на верный - <button className="text-white px-2 rounded-lg ease duration-300 bg-slate-700 hover:bg-slate-500 active:bg-slate-900 active:translate-y-1">Поставщик услуги</button></p>
+        </li>
+        
+        <li className="divide-slate-500 mb-5">
+          <h3 className="font-semibold uppercase">Что делать, если я оплатил неверную услугу?</h3>
+          <p className="px-5 text-justify">Вам нужно обратиться к получателю средств (Поставщику услуг) для возврата ошибочно уплаченных денежных средств - <button className="text-white px-2 rounded-lg  ease duration-300 bg-slate-700 hover:bg-slate-500 active:bg-slate-900 active:translate-y-1">Поставщик услуги</button></p>
+        </li>
+
+        <li className="divide-slate-500 mb-5">
+          <h3 className="font-semibold uppercase">Я сомневаюсь, верную услугу я пытаюсь оплатить?</h3>
+          <p className="px-5 text-justify">Для проверки правильности выбранной услуги обратите внимание на наименование Получателя средств (Поставщика услуг), который указан рядом с названием услуги, сверьте название поставщика услуги с данными квитанции или договора на оказание услуг, если услуга имеет номер лицевого счета/договора/телефона, также сравните данные с квитанцией или договором на оказание услуг.</p>
+        </li>
+        
+        <li className="divide-slate-500 mb-5">
+          <h3 className="font-semibold uppercase">К кому обратиться, если у меня остались вопросы?</h3>
+          <p className="px-5 text-justify">
+          По всем интересующим Вас вопросам просим обращаться:
+          <ul className="list">
+            <li className="list-item">Телефон: <a className="font-semibold text-slate-800 hover:text-slate-500 ease duration-100" href="tel:83532343103">+7 (3532) 343-103</a></li>
+            <li className="list-item">Email: <a className="font-semibold text-slate-800 hover:text-slate-500 ease duration-100" href="mailto:gorodpay@orbank.ru">gorodpay@orbank.ru</a></li>
+          </ul>
+          </p>
+        </li>
+
+      </ul>
+
+      <h2 className="text-left font-bold mt-5 mb-5 text-xl">Видеоинструкции</h2>
+      
+      
+      
     </Container>
    </Layout>
 
