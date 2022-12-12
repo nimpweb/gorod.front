@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="text-sm ml-5 mt-2">
             <p>Телефон: <a className="font-semibold" href="tel:83532343103">+7 (3532) 343-103</a>, <a className="font-semibold" href="tel:343-099">343-099</a></p>
             <p>Email: <a className="font-semibold" href="mailto:gorodpay@orbank.ru">gorodpay@orbank.ru</a></p>
-            <p className="mt-2">Обеспечивает проведение расчетов в рамках сервиса: АО "БАНК ОРЕНБУРГ"</p>
+            <p className="mt-2">Обеспечивает проведение расчетов в рамках сервиса: АО &quot;БАНК ОРЕНБУРГ&quot;</p>
           </div>
         </div>
         <div className="flex-1">
@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="text-sm ml-5 mt-2">
             <p>Телефон: <a className="font-semibold" href="tel:84957846055">+7(495) 784-60-55</a></p>
             <p>Email: <a className="font-semibold" href="mailto:info@multicarta.ru">info@multicarta.ru</a></p>
-            <p className="mt-2">Обеспечивает проведение расчетов в рамках сервиса: ПАО "Почта Банк"</p>
+            <p className="mt-2">Обеспечивает проведение расчетов в рамках сервиса: ПАО &quot;Почта Банк&quot;</p>
           </div>
         </div>
         <div className="flex-1">
