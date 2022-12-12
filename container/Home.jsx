@@ -23,12 +23,15 @@ const Home = () => {
         <Container>
           
           <div style={{position: 'absolute', top: 120}}>
-            <h4><img src="logo.png" alt="logo" /> Система "ГОРОД"</h4>
             <div>
-              <span className="text-green-700 text-5xl" style={{color: 'green', fontWeight: 'bold', fontSize: '130px', textShadow: '0 5px 20px rgba(255, 255, 255, 1)'}}>0<sub>%</sub></span>
-              <p style={{color: '#777', textWeight: 300}}><sup>*</sup> кроме некоторых услуг(размер комиссии указан до совершения платежа)</p>
+              <img src="logo.png" alt="logo" />
+              <span className="text-2xl text-white" style={{textShadow: '0 5px 10px rgba(0, 0, 0, .75)'}}>Система &quot;ГОРОД&quot;</span>
             </div>
-            <h1 className="text-white uppercase top-10 font-semibold" style={{fontSize: 120}}>Оплата ЖКХ</h1>
+            <div>
+              <span className="text-green-700 text-5xl" style={{color: 'green', fontWeight: 'bold', fontSize: '130px', textShadow: '0 5px 20px rgba(255, 255, 255, 1)', marginLeft: 500}}>0<sub>%</sub></span>
+              <p className="text-slate-700 font-semibold" style={{marginLeft: 500}}><sup>*</sup> кроме некоторых услуг(размер комиссии указан до совершения платежа)</p>
+            </div>
+            <h1 className="text-white uppercase top-10 font-semibold" style={{fontSize: 120, textShadow: '0 5px 10px rgba(0, 0, 0, .75)'}}>Оплата ЖКХ</h1>
           </div>
           <LoginBlock />
         </Container>

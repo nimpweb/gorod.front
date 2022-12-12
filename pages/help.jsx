@@ -7,7 +7,7 @@ export default function Help() {
     pageTitle="Помощь::Удобные платежи"
   >
     <Container>
-      <h1 className="font-bold text-xl text-center mb-5">Инструкции по работе с "Удобными платежами"</h1>
+      <h1 className="font-bold text-xl text-center mb-5">Инструкции по работе с &quot;Удобными платежами&quot;</h1>
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore officia itaque nemo dignissimos, odit ex ea omnis nam debitis unde harum. Voluptates repellat sit illum odit, nihil ad nesciunt delectus.
       Fugiat distinctio perferendis facilis quam enim at qui, accusamus laborum? Officiis nesciunt et consequuntur enim? Quo unde, voluptatum beatae omnis sunt odio vero totam sit eius repellendus nisi dolore tempore.</p>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate beatae, aliquid architecto nam id iste placeat? Nesciunt atque ea aliquam facere nemo labore sint reiciendis magnam necessitatibus explicabo, minus ipsam.
