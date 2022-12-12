@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className="w-full h-auto text-center font-semibold text-sm mt-3 pt-3 border-t-gray-500>">© АО «БАНК ОРЕНБУРГ», Лицензия ЦБ РФ №3269 от 31 марта 2016 г.</p>
+      <p className="w-full h-auto text-center font-semibold text-sm mt-3 pt-3 border-t-gray-500 text-slate-500 select-none">© АО «БАНК ОРЕНБУРГ», Лицензия ЦБ РФ №3269 от 31 марта 2016 г.</p>
     </div>
   )
 }
