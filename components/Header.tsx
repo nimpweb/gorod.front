@@ -39,7 +39,7 @@ const Header = () => {
             onClick={() => setProfilePopup(!profilePopup)}
           >
             <AiOutlineUserAdd /> Сергей П. Иванов&nbsp;&nbsp;<AiFillCaretDown />
-            <div className={`absolute ${!profilePopup && 'hidden'} right-0 z-10 mt-2 w-56 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none top-7`} role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+            <div className={`absolute ${!profilePopup && 'hidden'} right-0 z-10 mt-2 w-56 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none top-7`} >
               <div className="py-1" role="none">
                 <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem">Настройки</a>
                 <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem">Выход</a>
