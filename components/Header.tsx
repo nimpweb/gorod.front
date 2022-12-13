@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import React from 'react'
-import logo from '../public/logo.png'
 import { MdHelp, MdShowChart, MdAutoFixHigh } from 'react-icons/md'
 import {AiOutlineUserAdd, AiFillCaretDown } from 'react-icons/ai'
 
@@ -41,7 +40,7 @@ const Header = () => {
             <AiOutlineUserAdd /> Сергей П. Иванов&nbsp;&nbsp;<AiFillCaretDown />
             <div className={`absolute ${!profilePopup && 'hidden'} right-0 z-10 mt-2 w-56 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none top-7`} >
               <div className="py-1" role="none">
-                <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem">Настройки</a>
+                <Link legacyBehavior href="/profile"><a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem">Профиль</a></Link>
                 <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem">Выход</a>
               </div>
             </div>
