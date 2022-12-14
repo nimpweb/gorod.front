@@ -9,17 +9,17 @@ export default function Limit() {
     <Container>
       <h1 className="font-bold text-xl text-center mb-10">Лимиты по операциям обслуживания банковских карт на интернет-сайте Банка в целях осуществления переводов денежных средств в рамках Системы «Город»</h1>
 
-      <div class="overflow-x-auto relative shadow-md sm:rounded-lg" style={{width: '80%', margin: '0 auto'}} >
-        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <div className="overflow-x-auto relative shadow-md sm:rounded-lg" style={{width: '80%', margin: '0 auto'}} >
+        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
-                  <th scope="col" class="py-3 px-6 text-center">
+                  <th scope="col" className="py-3 px-6 text-center">
                   Лимиты
                   </th>
-                  <th scope="col" class="py-3 px-6 text-center">
+                  <th scope="col" className="py-3 px-6 text-center">
                   Оплата за жилищно-коммунальные услуги и содержание детей в дошкольных образовательных учреждениях
                   </th>
-                  <th scope="col" class="py-3 px-6 text-center">
+                  <th scope="col" className="py-3 px-6 text-center">
                   Оплата за прочие услуги Системы «Город»
                   </th>
               </tr>
@@ -33,25 +33,25 @@ export default function Limit() {
                 Максимальная сумма
               </td>
             </tr>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 одной операции*
                 </th>
-                <td class="py-4 px-6 text-center">
+                <td className="py-4 px-6 text-center">
                 30 100 руб.
                 </td>
-                <td class="py-4 px-6 text-center">
+                <td className="py-4 px-6 text-center">
                 10 000 руб.
                 </td>
             </tr>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 операций по одной карте в месяц
                 </th>
-                <td class="py-4 px-6 text-center">
+                <td className="py-4 px-6 text-center">
                 150 000 руб.
                 </td>
-                <td class="py-4 px-6 text-center">
+                <td className="py-4 px-6 text-center">
                 30 000 руб.
                 </td>
             </tr>
@@ -63,25 +63,25 @@ export default function Limit() {
                 Количество успешных попыток оплаты с одного IP-адреса
               </td>
             </tr>  
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 в день
                 </th>
-                <td class="py-4 px-6 text-center">
+                <td className="py-4 px-6 text-center">
                 5
                 </td>
-                <td class="py-4 px-6 text-center">
+                <td className="py-4 px-6 text-center">
                 5
                 </td>
             </tr>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 в месяц
                 </th>
-                <td class="py-4 px-6 text-center">
+                <td className="py-4 px-6 text-center">
                 10
                 </td>
-                <td class="py-4 px-6 text-center">
+                <td className="py-4 px-6 text-center">
                 10
                 </td>
             </tr>
@@ -93,25 +93,25 @@ export default function Limit() {
                 Количество различных номеров карт для оплаты с одного IP-адреса
               </td>
             </tr>  
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 в день
                 </th>
-                <td class="py-4 px-6 text-center">
+                <td className="py-4 px-6 text-center">
                 2
                 </td>
-                <td class="py-4 px-6 text-center">
+                <td className="py-4 px-6 text-center">
                 2
                 </td>
             </tr>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 в месяц
                 </th>
-                <td class="py-4 px-6 text-center">
+                <td className="py-4 px-6 text-center">
                 4
                 </td>
-                <td class="py-4 px-6 text-center">
+                <td className="py-4 px-6 text-center">
                 2
                 </td>
             </tr>

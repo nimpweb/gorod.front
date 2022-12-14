@@ -42,7 +42,7 @@ const bill = () => {
                 173 x 3,46 = <strong>₽ 685.08</strong>
                 </td>
                 <td class="py-4 px-6 text-center">
-                  <button className="bg-slate-800 py-1 px-3 rounded-xl text-white hover:bg-slate-500 cursor-pointer ease-linear duration-200">Внести показания</button>
+                  <button className="bg-slate-800 py-1 px-3 rounded-xl text-white hover:bg-slate-500 cursor-pointer ease-linear duration-200 active:translate-y-1">Внести показания</button>
                 </td>
             </tr>
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
