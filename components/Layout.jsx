@@ -43,6 +43,7 @@ const Layout = ( {children, pageTitle, backgroundOptions, options } ) => {
           :  <>{children}</>
         }
       </main>
+
       <Footer />
     </>
   )
