@@ -61,7 +61,7 @@ const bill = () => {
                 colSpan={3} 
                 className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 uppercase font-semibold text-center bg-slate-100 py-2"
               >
-                АО "Росводоканал"
+                АО &quot;Росводоканал&quot;
               </td>
             </tr>  
             
