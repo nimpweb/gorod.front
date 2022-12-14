@@ -16,7 +16,7 @@ const Header = () => {
   }, [])
   
 
-  const handleLogoutClick = (e) => {
+  const handleLogoutClick = (e: any) => {
     e.preventDefault();
     setLoggedIn(false);
   }
