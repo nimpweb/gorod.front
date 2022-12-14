@@ -28,9 +28,9 @@ const bill = () => {
             <tr>
               <td 
                 colSpan={3} 
-                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 uppercase font-semibold text-center bg-slate-100 py-2"
+                className="border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 uppercase font-semibold text-center bg-slate-100 py-2"
               >
-                АО "ЭнергосбыТ Плюс"
+                АО &quot;ЭнергосбыТ Плюс&quot;
               </td>
             </tr>
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -59,7 +59,7 @@ const bill = () => {
             <tr>
               <td 
                 colSpan={3} 
-                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 uppercase font-semibold text-center bg-slate-100 py-2"
+                className="border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 uppercase font-semibold text-center bg-slate-100 py-2"
               >
                 АО &quot;Росводоканал&quot;
               </td>
