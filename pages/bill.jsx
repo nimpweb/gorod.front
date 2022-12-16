@@ -6,11 +6,9 @@ import { Modal } from 'next-modal'
 import { CiSaveDown2 }  from 'react-icons/ci'
 import { GrFormClose } from 'react-icons/gr'
 
-const bill = () => {
+const Bill = () => {
 
   const [showModal, setShowModal] = React.useState(false)
-
-  
 
   return (
     <Layout 
@@ -162,7 +160,7 @@ const bill = () => {
                   colSpan={3} 
                   className="border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 uppercase font-semibold text-center bg-slate-100 py-2"
                 >
-                  ООО "ЦИФРАЛ-СЕРВИС"
+                  ООО &quot;ЦИФРАЛ-СЕРВИС&quot;
                 </td>
               </tr>  
               <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -207,4 +205,4 @@ const bill = () => {
   )
 }
 
-export default bill
+export default Bill

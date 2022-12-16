@@ -18,11 +18,11 @@ const Home = () => {
     <div className="relative flex items-center flex-col" style={{height: '650px'}}>
       <div style={{position: 'absolute', overflow: 'hidden', top: '-15px', bottom: '-15px', left: 0, right: 0}}>
         <div className="z-1 bg-slate-500" style={{ position: 'absolute', opacity: '0.6', left: 0, top: 0, right: 0, bottom: 0, backgroundColor: 'rgb(100 116 139)'}}></div>
-        <video className="w-full h-full" autoPlay loop muted controls={false} style={{objectFit: 'cover'}}>
+        <video className="z-0 w-full h-full" autoPlay loop muted controls={false} style={{objectFit: 'cover'}}>
           <source src={`./bg-2.mp4`} type="video/mp4" />
         </video>
         
-        <Container>
+        <Container className="z-5">
           <div className="flex">
             <div style={{position: 'absolute', top: 120}}>
               <div>
