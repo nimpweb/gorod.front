@@ -24,7 +24,7 @@ const Home = () => {
         <div className="z-1 bg-slate-500 inset-0 absolute" style={{ opacity: '0.6', backgroundColor: 'rgb(100 116 139)'}}></div>
         
         <Container className="z-2">
-          <div className="relative flex flex-col w-full h-full" style={{marginTop: '100px'}}>
+          <div className="relative w-full h-full flex flex-col " style={{marginTop: '100px'}}>
             <div className='flex flex-1 items-start'>
               <div className="flex-3 flex flex-col justify-center items-center">
                 <img src="logo.png" alt="logo" />
@@ -33,15 +33,16 @@ const Home = () => {
               <div className="text-white text-3xl text-center flex-1 select-none" style={{fontSize:'100px', fontFamily: 'Caveat', textShadow: '0 5px 10px rgba(200, 200, 200, .5)'}}>
                 Удобные платежи
               </div>
-
             </div>
-            <div className="flex flex-1 flex-col items-center gap-10" style={{border: 'solid 1px blue'}}>
-              <div className="flex align-end">
+            <div className="flex flex-1 items-center gap-10" style={{marginTop: '100px'}}>
+              <div className="flex flex-col align-end">
                 <span className="text-green-700 text-5xl" style={{color: 'green', fontWeight: 'bold', fontSize: '130px', textShadow: '0 5px 20px rgba(255, 255, 255, 1)'}}>0<sub>%</sub></span>
                 <p className="text-slate-100 font-semibold"><sup>*</sup> кроме некоторых услуг(размер комиссии указан до совершения платежа)</p>
               </div>
-              <span className="text-white" style={{fontSize: 60, textShadow: '0 5px 10px rgba(0, 0, 0, .75)'}}>на</span>
-              <h1 className="uppercase top-10 font-thin bg-white rounded-xl px-10 text-slate-700" style={{fontSize: 80, textShadow: '0 5px 10px rgba(0, 0, 0, .75)'}}>Оплату ЖКХ</h1>
+              <div className="flex justify-end items-end gap-10" style={{fontFamily: 'Caveat, sans-serif'}}>
+                <span className="text-white" style={{fontSize: 60, textShadow: '0 5px 10px rgba(0, 0, 0, .75)'}}>на</span>
+                <h1 className="uppercase top-10 font-thin bg-white rounded-xl px-10 text-slate-700" style={{fontSize: 130, textShadow: '0 5px 10px rgba(0, 0, 0, .75)'}}>Оплату ЖКХ</h1>
+              </div>
             </div>
           </div>
           {/* <LoginBlock /> */}
