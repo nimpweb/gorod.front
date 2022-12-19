@@ -1,8 +1,5 @@
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   // purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -87,6 +84,13 @@ module.exports = {
     cursor: {
       'zoom-in': 'zoom-in',
       pointer: 'pointer',
+    },
+
+    defaultButton: {
+      backgroundColor: '',
+      color: 'white',
+      padding: '1px 5px',
+      cursor: 'point',
     },
   },
   variants: {
