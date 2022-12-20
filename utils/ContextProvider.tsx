@@ -16,6 +16,15 @@ export const StateContextProvider = ( { children } : { children: React.ReactNode
     // const [token, _setToken] = React.useState(localStorage.getItem('ACCESS_TOKEN'));
     const [token, _setToken] = React.useState(null);
 
+    React.useEffect(() => {
+        setUser({
+            name: 'nimp',
+            shortFio: 'Максим П. Нестеров',
+            email: 'nimpweb@yandex.ru'
+        })
+    
+    }, [])
+
     const setToken = (value: string) => {
         _setToken(value);
         if (value) {
@@ -24,6 +33,7 @@ export const StateContextProvider = ( { children } : { children: React.ReactNode
             localStorage.removeItem('ACCESS_TOKEN');
         }
     }
+
     return (
         <StateContext.Provider  value={{ user, token, setToken, setUser }}>
             { children }

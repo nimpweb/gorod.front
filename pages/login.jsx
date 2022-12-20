@@ -65,11 +65,10 @@ const login = () => {
                 </label>
               
               <div className="flex gap-5">
-                <label className="flex item-center gap-2">
+                <label className="flex item-center gap-2 text-slate-500">
                   <input type="checkbox" name="" />
-                  Сохранить
+                  Сохранить профиль / автовход
                 </label>
-                <Link href="/register"><span className="hover:text-slate-500 ease duration-200">Еще нет профиля?</span></Link>
               </div>
             </div>
             <div className="flex items-center gap-2">

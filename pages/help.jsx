@@ -39,6 +39,12 @@ export default function Help() {
       </ul>
 
       <h2 className="text-left font-bold mt-5 mb-5 text-xl">Видеоинструкции</h2>
+
+
+      <div className="flex gap-3">
+        <VideoInstruction title="Презентация Оренбург Банк" src="https://www.youtube.com/embed/vEx_nwEhFXA" />
+        <VideoInstruction title="Дебетовые карты банка Оренбург" src="https://www.youtube.com/embed/az6EEoM_xHQ" />
+      </div>
       
       
       
@@ -46,6 +52,19 @@ export default function Help() {
    </Layout>
 
   )
+}
 
-
+function VideoInstruction({ title, src } ) {
+    return (
+        <div className="w-[320px] border  rounded-xl overflow-hidden shadow-md p-2">
+            <h3 className="font-bold tracking-wide">{ title }</h3>
+            <iframe 
+                src={src} 
+                title={title} 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen 
+            />
+        </div>
+    )
 }
