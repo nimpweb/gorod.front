@@ -3,6 +3,8 @@ import Head from 'next/head'
 import Footer from './Footer';
 import Header from './Header';
 
+import { StateContextProvider } from '../utils/ContextProvider'
+
 const OpacityContainer = ({backgroundColor, opacity, children}) => {
   return (
     <div className="relative w-full h-full pt-20 pb-10">
@@ -22,7 +24,7 @@ const Layout = ( {children, pageTitle, backgroundOptions, options } ) => {
   if (options?.fixedHeight) mainStyle.height = options.fixedHeight;
 
   return (
-    <>
+    <StateContextProvider>
       <Head>
         <title>{pageTitle || "Удобные платежи"}</title>
         <meta name="description" content={`${pageTitle} :: удобные платежи`} />
@@ -45,7 +47,7 @@ const Layout = ( {children, pageTitle, backgroundOptions, options } ) => {
       </main>
 
       <Footer />
-    </>
+    </StateContextProvider>
   )
 }
 

@@ -16,7 +16,7 @@ const Bill = () => {
       pageTitle="Начисление::Удобные платежи"
     >
       <Container>
-        <h1 className="font-bold text-xl text-center mb-5">Период начисления за декабрь 2022г.</h1>
+        <h1 className="font-bold text-xl text-center mb-5 select-none">Период начисления за декабрь 2022г.</h1>
 
         <div className="flex gap-10">
           <Sidebar />

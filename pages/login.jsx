@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import {Layout, Container} from '../components'
 import Link  from 'next/link'
+import { CiLogin } from 'react-icons/ci';
 
 const backgroundOptions = {
   background: 'rgba(255,255,255,0.5) url(./Data_security_05.jpg)',
@@ -14,6 +15,11 @@ const backgroundOptions = {
 }
 
 const login = () => {
+
+    const [login, setLogin ] = React.useState('')
+    const [password, setPassword ] = React.useState('')
+
+
   return (
     <Layout 
       pageTitle="Авторизация::Удобные платежи"
@@ -24,18 +30,40 @@ const login = () => {
       <Container className="max-w-md">
         <h1 className="font-bold text-xl text-center mb-10">Авторизация</h1>
 
-        <div className="shadow-2xl w-full h-full p-20 rounded-2xl bg-white opacity-80 flex gap-10">
+        <div className="shadow-2xl w-1/2 m-auto h-full p-20 rounded-2xl bg-white opacity-80 flex gap-10">
 
-          <Image 
-            src="/two.png"
-            alt="logo" 
-            width={200}
-            height={200}
-          />
-          <div className="flex flex-col w-full gap-5">
-            <div  className="flex flex-col w-full gap-5">
-              <input className="border border-slate-800 p-2 rounded-md ease-linear duration-200" type="text" placeholder='Укажите Ваш логин'/>
-              <input className="border border-slate-800 p-2 rounded-md ease-linear duration-200" type="password" placeholder='Укажите пароль'/>
+        <div className="relative flex-1 flex items-center">
+            <Image 
+                src="/two.png"
+                alt="logo" 
+                // fill
+                width={200}
+                height={200}
+            />
+          </div>
+          <div className="flex flex-col flex-1 w-full gap-5">
+            <div className="flex flex-col w-full gap-5">
+                <label htmlFor="" className="flex flex-col gap-1">
+                    Логин
+                    <input 
+                        type="text" 
+                        name="name" 
+                        placeholder="Укажите Ваш логин" 
+                        className="border p-2 px-5 rounded-xl shadow-sm outline-none focus:border-slate-400 ease duration-200 bg-slate-100/95 focus:bg-white"
+                        onChange={(e) => setLogin(e.target.value)}
+                    />
+                </label>
+                <label htmlFor="" className="flex flex-col gap-1">
+                    Пароль
+                    <input 
+                        type="password" 
+                        name="password" 
+                        placeholder="Укажите пароль" 
+                        className="border p-2 px-5 rounded-xl shadow-sm outline-none focus:border-slate-400 ease duration-200 bg-slate-100/95 focus:bg-white"
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </label>
+              
               <div className="flex gap-5">
                 <label className="flex item-center gap-2">
                   <input type="checkbox" name="" />
@@ -44,9 +72,15 @@ const login = () => {
                 <Link href="/register"><span className="hover:text-slate-500 ease duration-200">Еще нет профиля?</span></Link>
               </div>
             </div>
-            <div className="flex">
-              <button>Авторизоваться</button>
+            <div className="flex items-center gap-2">
+              <button 
+                type="submit"
+                className="flex w-full justify-center items-center gap-1 bg-slate-800 text-white p-2 px-5 rounded-md cursor-pointer hover:bg-slate-500 ease-linear duration-200 disabled:bg-slate-200 disabled:text-slate-300"
+              >
+                <CiLogin /> Авторизоваться
+            </button>
             </div>
+            <p className="text-sm text-center">Если у Вас еще нет профиля, то пройдите <Link href='/register'><span className="cursor-pointer underline text-blue-900">Регистрацию</span></Link></p>
 
           </div>
         </div>
