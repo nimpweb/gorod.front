@@ -5,7 +5,7 @@ import { IUser } from './models'
 interface IStateContextProps {
     user: IUser | null
     token: string | null
-    setToken: (token: string) => void
+    setToken: (token: any) => void
     setUser: (user: any) => void
 }
 
@@ -25,7 +25,7 @@ export const StateContextProvider = ( { children } : { children: React.ReactNode
     
     }, [])
 
-    const setToken = (value: string) => {
+    const setToken = (value) => {
         _setToken(value);
         if (value) {
             localStorage.setItem('ACCESS_TOKEN', value);

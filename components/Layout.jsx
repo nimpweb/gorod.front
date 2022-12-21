@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Header from './Header';
 
 import { StateContextProvider } from '../utils/ContextProvider'
+import { ModalContextProvider } from './Modal';
 
 const OpacityContainer = ({backgroundColor, opacity, children}) => {
   return (
@@ -25,28 +26,30 @@ const Layout = ( {children, pageTitle, backgroundOptions, options } ) => {
 
   return (
     <StateContextProvider>
-      <Head>
-        <title>{pageTitle || "Удобные платежи"}</title>
-        <meta name="description" content={`${pageTitle} :: удобные платежи`} />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-        <link rel="icon" type="image/png" href="./logo.png" />
-      </Head>
-      <header>
-        <Header />
-      </header>
-      <main className={`${!backgroundOptions?.withOpacity && 'pt-20 pb-10'} bg-slate-100 relative`} style={mainStyle}>
-        { backgroundOptions?.withOpacity  
-          ? (
-              <OpacityContainer 
-                backgroundColor={backgroundOptions?.backgroundColor} 
-                opacity={backgroundOptions?.backgroundOpacity}
-              >  {children} </OpacityContainer>
-            ) 
-          :  <>{children}</>
-        }
-      </main>
+        <ModalContextProvider>
+            <Head>
+                <title>{pageTitle || "Удобные платежи"}</title>
+                <meta name="description" content={`${pageTitle} :: удобные платежи`} />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+                <link rel="icon" type="image/png" href="./logo.png" />
+            </Head>
+            <header>
+                <Header />
+            </header>
+            <main className={`${!backgroundOptions?.withOpacity && 'pt-20 pb-10'} bg-slate-100 relative`} style={mainStyle}>
+                { backgroundOptions?.withOpacity  
+                ? (
+                    <OpacityContainer 
+                        backgroundColor={backgroundOptions?.backgroundColor} 
+                        opacity={backgroundOptions?.backgroundOpacity}
+                    >  {children} </OpacityContainer>
+                    ) 
+                :  <>{children}</>
+                }
+            </main>
 
-      <Footer />
+            <Footer />
+      </ModalContextProvider>
     </StateContextProvider>
   )
 }
