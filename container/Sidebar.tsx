@@ -5,6 +5,21 @@ import {AiOutlineRight } from 'react-icons/ai';
 
 
 const Sidebar = () => {
+    const [sidebarRoute, _setSidebarRoute] = React.useState('SIDEBAR_ROUTE');
+
+    React.useEffect(() => {
+        let route = localStorage.getItem('SIDEBAR_ROUTE') ?? '/profile';
+
+
+
+    }, [])
+
+    // const setSidebarRoue = (e: Link) => {
+    //     e.preventDefault()
+    //     console.log(e.target.href);
+    // }
+
+
   return (
     <div className='relative flex flex-col gap-3 bg-slate-400 w-1/4' style={{width: '15%'}}>   
       <Link href="/profile"> 
