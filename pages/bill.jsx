@@ -17,7 +17,7 @@ const Bill = () => {
   const [showState2Modal, setShowState2Modal] = React.useState(false)
   const [showState3Modal, setShowState3Modal] = React.useState(false)
 
-  const [needToPay] = React.useState(false);
+  const [needToPay] = React.useState(true);
 
   const handleSaveElectroInfo = () => {
     setShowState1Modal(false)
