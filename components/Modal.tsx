@@ -26,7 +26,7 @@ interface IModalProps {
 
 const ModalForm = ({ title, children, setModal }: IModalProps) => {
   return (
-    <div className="absolute inset-0 overflow-hidden bg-slate-500/50  z-20 bg-black flex items-center justify-center">
+    <div className="absolute inset-0 overflow-hidden bg-slate-500/50  z-20 flex items-center justify-center">
         <div className="relative border border-1 bg-white w-[500px] max-h-fit rounded-2xl z-30 opacity-1 flex flex-col  p-5 ">
             <span 
                 className="absolute bg-white rounded-full px-2 cursor-pointer right-[-20px] top-[-20px] font-semibold text-blue-800 z-20 hover:bg-slate-500 hover:text-white ease duration-200 shadow-lg"

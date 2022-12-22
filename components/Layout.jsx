@@ -20,8 +20,8 @@ const Layout = ( {children, pageTitle, backgroundOptions, options } ) => {
   let mainStyle = {};
   if (backgroundOptions){
     mainStyle = {...backgroundOptions};
+    if (mainStyle.withOpacity) delete mainStyle.withOpacity;
   }
-  
   if (options?.fixedHeight) mainStyle.height = options.fixedHeight;
 
   return (
@@ -36,7 +36,7 @@ const Layout = ( {children, pageTitle, backgroundOptions, options } ) => {
             <header>
                 <Header />
             </header>
-            <main className={`${!backgroundOptions?.withOpacity && 'pt-20 pb-10'} bg-slate-100 relative`} style={mainStyle}>
+            <main className={!backgroundOptions?.withOpacity && 'pt-20 pb-10' + ' bg-slate-100 relative'} style={mainStyle}>
                 { backgroundOptions?.withOpacity  
                 ? (
                     <OpacityContainer 
