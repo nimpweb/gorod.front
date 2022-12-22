@@ -14,7 +14,7 @@ const backgroundOptions = {
   withOpacity: true
 }
 
-const login = () => {
+const Login = () => {
 
     const [login, setLogin ] = React.useState('')
     const [password, setPassword ] = React.useState('')
@@ -99,4 +99,4 @@ const login = () => {
   )
 }
 
-export default login
+export default Login
