@@ -1,21 +1,25 @@
-import axios from "axios";
+import axios, { AxiosError, AxiosRequestConfig } from "axios";
 
 export const $api = axios.create({
     baseURL: 'http://localhost:8000/api'
 })
 
 $api.interceptors.request.use( 
-    ( request ) => {
+    ( request : AxiosRequestConfig) => {
         const token = localStorage.getItem('ACCESS_TOKEN');
-        request.headers.Authorization = `Bearer ${token}`;
+        if (request.headers) {
+            request.headers['Authorization'] =  `Bearer ${token}`;
+        }
+        request.withCredentials = true;
         return request;
     }, 
-    (error) => {
-        return new Promise.reject(error);
+    (error : AxiosError  ) => {
+        console.log(error.message);
+        // return new Promise.reject(error.message);
     }
 )
 
-$api.interceptors.response = (
+$api.interceptors.response.use(
     (response) => {
         return response
     },
@@ -23,7 +27,7 @@ $api.interceptors.response = (
         if (error.response.statusCode === 401) {
             localStorage.removeItem('ACCESS_TOKEN');
         }
-        return new Promise.reject(error);
+        console.log(error.message)
     }
 )
 

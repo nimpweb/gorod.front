@@ -12,9 +12,8 @@ interface IStateContextProps {
 export const StateContext = React.createContext<IStateContextProps>({} as IStateContextProps);
 
 export const StateContextProvider = ( { children } : { children: React.ReactNode } ) => {
-    const [user, setUser] = React.useState(null);
-    // const [token, _setToken] = React.useState(localStorage.getItem('ACCESS_TOKEN'));
-    const [token, _setToken] = React.useState(null);
+    const [user, setUser] = React.useState<IUser | null>(null);
+    const [token, _setToken] = React.useState<string | null>(null);
 
     React.useEffect(() => {
         setUser({
@@ -25,7 +24,7 @@ export const StateContextProvider = ( { children } : { children: React.ReactNode
     
     }, [])
 
-    const setToken = (value) => {
+    const setToken = (value: string) => {
         _setToken(value);
         if (value) {
             localStorage.setItem('ACCESS_TOKEN', value);
