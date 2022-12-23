@@ -6,7 +6,13 @@ import Header from './Header';
 import { StateContextProvider } from '../utils/ContextProvider'
 import { ModalContextProvider } from './Modal';
 
-const OpacityContainer = ({backgroundColor, opacity, children}) => {
+interface IOpacityContainer {
+    backgroundColor: string | any
+    opacity: string
+    children: React.ReactNode
+}
+
+const OpacityContainer = ({backgroundColor, opacity, children} : IOpacityContainer) => {
   return (
     <div className="relative w-full h-full pt-20 pb-10">
       <div className="absolute inset-0 z-0" style={{backgroundColor,opacity}}></div>
@@ -16,13 +22,38 @@ const OpacityContainer = ({backgroundColor, opacity, children}) => {
   )
 }
 
-const Layout = ( {children, pageTitle, backgroundOptions, options } ) => {
-  let mainStyle = {};
+export interface ILayoutBackgroundOptions {
+    // ...React.CSSProperties,
+    css : React.CSSProperties
+    withOpacity: boolean
+    backgroundOpacity: string
+}
+
+export interface ILayoutOptions {
+    fixedHeight ?: number
+}
+
+
+
+interface ILayout {
+    pageTitle: string
+    backgroundOptions?: ILayoutBackgroundOptions
+    options?: ILayoutOptions
+    children?: React.ReactNode
+}
+
+
+const Layout = ( {children, pageTitle, backgroundOptions, options } : ILayout ) => {
+  let mainStyle : React.CSSProperties = {};
   if (backgroundOptions){
-    mainStyle = {...backgroundOptions};
-    if (mainStyle.withOpacity) delete mainStyle.withOpacity;
+    mainStyle = {...backgroundOptions.css }
   }
   if (options?.fixedHeight) mainStyle.height = options.fixedHeight;
+
+//   let mainClassName : string  =  '';
+//   if (backgroundOptions.withOpacity) mainClassName = ' pt-20 pb-10 ';
+//   mainClassName = (!backgroundOptions?.withOpacity) &&  + ' bg-slate-100 relative'
+  const mainClassName = `${ !backgroundOptions?.withOpacity  ? 'pt-20 pb-10' : ' bg-slate-100 relative'}`
 
   return (
     <StateContextProvider>
@@ -36,11 +67,11 @@ const Layout = ( {children, pageTitle, backgroundOptions, options } ) => {
             <header>
                 <Header />
             </header>
-            <main className={!backgroundOptions?.withOpacity && 'pt-20 pb-10' + ' bg-slate-100 relative'} style={mainStyle}>
+            <main className={mainClassName} style={mainStyle}>
                 { backgroundOptions?.withOpacity  
                 ? (
                     <OpacityContainer 
-                        backgroundColor={backgroundOptions?.backgroundColor} 
+                        backgroundColor={backgroundOptions.css.backgroundColor} 
                         opacity={backgroundOptions?.backgroundOpacity}
                     >  {children} </OpacityContainer>
                     ) 

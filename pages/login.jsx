@@ -4,15 +4,8 @@ import {Layout, Container} from '../components'
 import Link  from 'next/link'
 import { CiLogin } from 'react-icons/ci';
 
-const backgroundOptions = {
-  background: 'rgba(255,255,255,0.5) url(./Data_security_05.jpg)',
-  // backgroundImage: 'url(./90466.jpg)',
-  backgroundPosition: 'center',
-  backgroundSize: 'cover',
-  backgroundColor: 'rgb(241, 245, 249)',
-  backgroundOpacity: '0.85',
-  withOpacity: true
-}
+// const backgroundOptions = {
+// }
 
 const Login = () => {
 
@@ -30,7 +23,18 @@ const Login = () => {
   return (
     <Layout 
       pageTitle="Авторизация::Удобные платежи"
-      backgroundOptions={backgroundOptions}
+      backgroundOptions={{
+        css: {
+            background: 'rgba(255,255,255,0.5) url(./Data_security_05.jpg)',
+            // backgroundImage: 'url(./90466.jpg)',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundColor: 'rgb(241, 245, 249)',
+            backgroundOpacity: '0.85',
+        },
+        withOpacity: true
+      }}
+        
       options={{fixedHeight: "700px"}}
       
     >

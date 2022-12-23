@@ -10,7 +10,7 @@ export default function Help() {
       <h1 className="font-bold text-xl text-center mb-5">Инструкции по работе с &quot;Удобными платежами&quot;</h1>
       <h2 className="text-left font-bold mt-5 mb-5 text-xl">Часто задаваемые вопросы</h2>
       <ul>
-        <li className="divide-slate-500 mb-5">
+    <li className="divide-slate-500 mb-5">
           <h3 className="font-semibold uppercase">Что делать если заплатил на неверный лицевой счет?</h3>
           <p className="px-5 text-justify">Вам нужно обратиться к получателю средств (Поставщику услуги) для переноса платежа с неверного лицевого счета на верный - <button className="text-white px-2 rounded-lg ease duration-300 bg-slate-700 hover:bg-slate-500 active:bg-slate-900 active:translate-y-1">Поставщик услуги</button></p>
         </li>
@@ -30,8 +30,8 @@ export default function Help() {
           <p className="px-5 text-justify">
           По всем интересующим Вас вопросам просим обращаться:
           <ul className="list">
-            <li className="list-item">Телефон: <a className="font-semibold text-slate-800 hover:text-slate-500 ease duration-100" href="tel:83532343103">+7 (3532) 343-103</a></li>
-            <li className="list-item">Email: <a className="font-semibold text-slate-800 hover:text-slate-500 ease duration-100" href="mailto:gorodpay@orbank.ru">gorodpay@orbank.ru</a></li>
+            <li className="list-item">Телефон: <a className="font-semibold underline text-slate-800 hover:text-slate-500 ease duration-100" href="tel:83532343103">+7 (3532) 343-103</a></li>
+            <li className="list-item">Email: <a className="font-semibold underline text-slate-800 hover:text-slate-500 ease duration-100" href="mailto:gorodpay@orbank.ru">gorodpay@orbank.ru</a></li>
           </ul>
           </p>
         </li>
