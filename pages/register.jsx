@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Layout, Container } from "../components";
 import { AiOutlineUserAdd } from 'react-icons/ai';
+import {$api} from './../utils/api'
 
 export default function Help() {
 
@@ -24,6 +25,16 @@ export default function Help() {
         else setErrorMessage('')
     }
 
+    const handleSubmitForm = (event) => {
+        event.preventDefault();
+        console.log('FORM: ', event);
+        const formData = new FormData(event.target);
+        $api.post('/register', formData)
+            .then(data  => console.log('REGISTER DATA: ', data))
+            .catch(error => console.warn(error));
+
+    }
+
   return (
    <Layout 
     pageTitle="Регистрация::Удобные платежи"
@@ -31,62 +42,65 @@ export default function Help() {
     <Container>
       <h1 className="font-bold text-xl text-center mb-5">Регистрация в &quot;Удобных платежах&quot;</h1>
       <div className="bg-white rounded-2xl p-10 w-1/2 m-auto flex flex-col gap-2">
-        { errorMessage.length > 0 && <div className="w-full rounded-lg text-center bg-red-700 text-white p-2 font-semibold text-sm">{ errorMessage }</div> }
-        <label htmlFor="" className="flex flex-col gap-1">
-            Укажите Ваше имя
-            <input 
-                type="text" 
-                name="name" 
-                placeholder="Укажите Ваше имя" 
-                className="border p-2 px-5 rounded-xl shadow-sm outline-none focus:border-slate-400 ease duration-200 bg-slate-100/95 focus:bg-white"
-                onChange={(e) => setName(e.target.value)}
-            />
-        </label>
+        <form method="post" onSubmit={handleSubmitForm}>
+            { errorMessage.length > 0 && <div className="w-full rounded-lg text-center bg-red-700 text-white p-2 font-semibold text-sm">{ errorMessage }</div> }
+            <label htmlFor="" className="flex flex-col gap-1">
+                Укажите Ваше имя
+                <input 
+                    type="text" 
+                    name="lastname" 
+                    placeholder="Укажите Ваше имя" 
+                    className="border p-2 px-5 rounded-xl shadow-sm outline-none focus:border-slate-400 ease duration-200 bg-slate-100/95 focus:bg-white"
+                    onChange={(e) => setName(e.target.value)}
+                />
+            </label>
 
-        <label htmlFor="" className="flex flex-col gap-1">
-            Укажите Вашу электронную почту
-            <input 
-                type="email" 
-                name="name" 
-                placeholder="Электронная почта" 
-                className="border p-2 px-5 rounded-xl shadow-sm outline-none focus:border-slate-400 ease duration-200 bg-slate-100/95 focus:bg-white"
-                onChange={(e) => setEmail(e.target.value)}
-            />
-        </label>
-      
-        <label htmlFor="" className="flex flex-col gap-1">
-            Пароль
-            <input 
-                type="password" 
-                name="name" 
-                placeholder="Пароль" 
-                className="border p-2 px-5 rounded-xl shadow-sm outline-none focus:border-slate-400 ease duration-200 bg-slate-100/95 focus:bg-white"
-                onChange={(e) => setPassword(e.target.value)}
-            />
-        </label>
+            <label htmlFor="" className="flex flex-col gap-1">
+                Укажите Вашу электронную почту
+                <input 
+                    type="email" 
+                    name="email" 
+                    placeholder="Электронная почта" 
+                    className="border p-2 px-5 rounded-xl shadow-sm outline-none focus:border-slate-400 ease duration-200 bg-slate-100/95 focus:bg-white"
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+            </label>
+        
+            <label htmlFor="" className="flex flex-col gap-1">
+                Пароль
+                <input 
+                    type="password" 
+                    name="password" 
+                    placeholder="Пароль" 
+                    className="border p-2 px-5 rounded-xl shadow-sm outline-none focus:border-slate-400 ease duration-200 bg-slate-100/95 focus:bg-white"
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+            </label>
 
-        <label htmlFor="" className="flex flex-col gap-1">
-            Подтверждение пароля
-            <input 
-                type="password" 
-                name="name" 
-                placeholder="Подтвердите пароль" 
-                className="border p-2 px-5 rounded-xl shadow-sm outline-none focus:border-slate-400 ease duration-200 bg-slate-100/95 focus:bg-white"
-                onChange={(e) => setPasswordConfirm(e.target.value)}
-                onBlur ={handleCheckPasswords}
-            />
-        </label>
+            <label htmlFor="" className="flex flex-col gap-1">
+                Подтверждение пароля
+                <input 
+                    type="password" 
+                    name="passwordConfirm" 
+                    placeholder="Подтвердите пароль" 
+                    className="border p-2 px-5 rounded-xl shadow-sm outline-none focus:border-slate-400 ease duration-200 bg-slate-100/95 focus:bg-white"
+                    onChange={(e) => setPasswordConfirm(e.target.value)}
+                    onBlur ={handleCheckPasswords}
+                />
+            </label>
 
-        <div className="divide-x"></div>
-        <div className="flex justify-center">
-            <button 
-                type="submit" 
-                disabled={!enableButton}
-                className="flex items-center gap-1 bg-slate-800 text-white p-2 px-5 rounded-md cursor-pointer hover:bg-slate-500 ease-linear duration-200 disabled:bg-slate-200 disabled:text-slate-300"
-            >
-                <AiOutlineUserAdd /> Зарегистрировать
-            </button>
-        </div>
+            <div className="divide-x"></div>
+            <br />
+            <div className="flex justify-center">
+                <button 
+                    type="submit" 
+                    disabled={!enableButton}
+                    className="flex items-center gap-1 bg-slate-800 text-white p-2 px-5 rounded-md cursor-pointer hover:bg-slate-500 ease-linear duration-200 disabled:bg-slate-200 disabled:text-slate-300"
+                >
+                    <AiOutlineUserAdd /> Зарегистрировать
+                </button>
+            </div>
+        </form>
         <div className="p-5">
             <h2 className="font-semibold text-center mb-2">Регистрация через социальные сети</h2>
             <p className="text-center">А нужно ли...?</p>
