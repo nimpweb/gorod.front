@@ -6,9 +6,11 @@ export const $api = axios.create({
 
 $api.interceptors.request.use( 
     ( request : AxiosRequestConfig) => {
-        const token = localStorage.getItem('ACCESS_TOKEN');
+        const token = localStorage.getItem('ACCESS_TOKEN') ?? '111';
         if (request.headers) {
-            request.headers['Authorization'] =  `Bearer ${token}`;
+            // request.headers['Authorization'] =  `Bearer ${token}`;
+            request.headers['Access-Control-Allow-Methods'] = 'GET,PUT,POST,DELETE,PATCH,OPTIONS';
+            request.headers['Access-Control-Allow-Origin'] = 'http://localhost:3000';
         }
         request.withCredentials = true;
         return request;

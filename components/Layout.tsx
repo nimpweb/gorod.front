@@ -3,7 +3,6 @@ import Head from 'next/head'
 import Footer from './Footer';
 import Header from './Header';
 
-import { StateContextProvider } from '../utils/ContextProvider'
 import { ModalContextProvider } from './Modal';
 
 interface IOpacityContainer {
@@ -56,7 +55,6 @@ const Layout = ( {children, pageTitle, backgroundOptions, options } : ILayout ) 
   const mainClassName = `${ !backgroundOptions?.withOpacity  ? 'pt-20 pb-10' : ' bg-slate-100 relative'}`
 
   return (
-    <StateContextProvider>
         <ModalContextProvider>
             <Head>
                 <title>{pageTitle || "Удобные платежи"}</title>
@@ -81,7 +79,6 @@ const Layout = ( {children, pageTitle, backgroundOptions, options } : ILayout ) 
 
             <Footer />
       </ModalContextProvider>
-    </StateContextProvider>
   )
 }
 

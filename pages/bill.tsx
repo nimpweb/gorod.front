@@ -9,6 +9,7 @@ import ModalForm from '../components/Modal'
 import { HiOutlineSaveAs } from 'react-icons/hi'
 import { TiArrowBack } from 'react-icons/ti'
 import { IGorodService } from '../utils/models'
+import { useRouter } from 'next/router'
 
 interface IBillProps  {
 
@@ -23,8 +24,14 @@ const Bill = (props : IBillProps) => {
 
   const [needToPay] = React.useState(true);
 
+    const router = useRouter();
+
   const handleSaveElectroInfo = () => {
     setShowState1Modal(false)
+  }
+
+  const handlePayButtonClick = () => {
+    router.push('/payed')
   }
 
   console.log('PROPS: ', props);
@@ -81,7 +88,8 @@ const Bill = (props : IBillProps) => {
                   <div className="flex justify-center gap-5 mt-5 pb-2">
                       <button
                           className="bg-green-800 text-white py-1 px-5 flex items-center gap-2 rounded-xl cursor-pointer hover:bg-slate-500 ease duration-200 active:translate-y-1"
-                          onClick={handleSaveElectroInfo}>
+                          onClick={handleSaveElectroInfo}
+                        >
                           <HiOutlineSaveAs />
                           Сохранить
                       </button>
@@ -160,7 +168,8 @@ const Bill = (props : IBillProps) => {
                   <div className="flex justify-center gap-5 mt-5 pb-2">
                       <button
                           className="bg-green-800 text-white py-1 px-5 flex items-center gap-2 rounded-xl cursor-pointer hover:bg-slate-500 ease duration-200 active:translate-y-1"
-                          onClick={handleSaveElectroInfo}>
+                          onClick={handleSaveElectroInfo}
+                        >
                           <HiOutlineSaveAs />
                           Сохранить
                       </button>
@@ -414,7 +423,10 @@ const Bill = (props : IBillProps) => {
 
                                   <button
                                       type="button"
-                                      className="mt-5 flex items-center bg-green-800 text-white p-2 px-6 rounded-xl justify-center w-full gap-3 hover:bg-green-500 ease duration-200 active:translate-y-1">
+                                      className="mt-5 flex items-center bg-green-800 text-white p-2 px-6 rounded-xl justify-center w-full gap-3 hover:bg-green-500 ease duration-200 active:translate-y-1"
+                                      onClick={handlePayButtonClick}
+                                    >
+                                        
                                       <GiPayMoney /> Оплатить
                                   </button>
                               </div>
