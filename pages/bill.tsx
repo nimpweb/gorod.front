@@ -2,8 +2,6 @@ import React from 'react'
 import {Layout, Container} from '../components'
 import { GiPayMoney }  from 'react-icons/gi'
 import { TiSortNumerically }  from 'react-icons/ti'
-import { CiSaveDown2 }  from 'react-icons/ci'
-import { GrFormClose } from 'react-icons/gr'
 import { Sidebar }  from './../container';
 import ModalForm from '../components/Modal'
 import { HiOutlineSaveAs } from 'react-icons/hi'

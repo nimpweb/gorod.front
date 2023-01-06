@@ -23,6 +23,9 @@ const bill = () => {
                                         Период
                                     </th>
                                     <th scope="col" className="py-3 px-6 text-center">
+                                        Квитанция
+                                    </th>
+                                    <th scope="col" className="py-3 px-6 text-center">
                                         Насчислено
                                     </th>
                                     <th scope="col" className="py-3 px-6 text-center w-[300px]">
@@ -37,6 +40,9 @@ const bill = () => {
                                         className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         март 2022
                                     </th>
+                                    <td className="py-4 px-6 text-center">
+                                        №1507752271
+                                    </td>
                                     <td className="py-4 px-6 text-center">
                                         <strong>₽ 4 688.22</strong>
                                     </td>
@@ -57,6 +63,9 @@ const bill = () => {
                                         февраль 2022
                                     </th>
                                     <td className="py-4 px-6 text-center">
+                                        №1493060743  
+                                    </td>
+                                    <td className="py-4 px-6 text-center">
                                         <strong>₽ 6 611.12</strong>
                                     </td>
                                     <td className="py-4 px-6 text-center flex flex-col gap-1 justify-center items-center">
@@ -74,6 +83,9 @@ const bill = () => {
                                         className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         январь 2022
                                     </th>
+                                    <td className="py-4 px-6 text-center">
+                                        №1465624191
+                                    </td>
                                     <td className="py-4 px-6 text-center">
                                         <strong>₽ 5 685.08</strong>
                                     </td>
