@@ -8,7 +8,7 @@ import { CgProfile } from 'react-icons/cg';
 import { CiLogin } from 'react-icons/ci';
 import {BsGrid3X2Gap} from 'react-icons/bs';
 import { ImHistory } from 'react-icons/im';
-import { useUser } from './../store';
+import { useMobile, useUser } from './../store';
 
 const Header = () => {
     const [loggedIn, setLoggedIn] = React.useState(false);

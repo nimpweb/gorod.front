@@ -27,8 +27,9 @@ const Profile = () => {
                 <div className="flex gap-10">
                     <Sidebar />
                     <div
-                        className="overflow-x-auto relative shadow-md sm:rounded-lg bg-white"
-                        style={{ width: '80%' }}>
+                        className=" overflow-x-auto relative shadow-md sm:rounded-lg bg-white sm:w-[80%] w-full"
+                        // style={{ width: '80%' }}
+                        >
                         
                         <form 
                             method="post" 
@@ -36,7 +37,7 @@ const Profile = () => {
                             className="p-5"
                         >
                             { errorMessage.length > 0 && <div className="w-full rounded-lg text-center bg-red-700 text-white p-2 font-semibold text-sm">{ errorMessage }</div> }
-                            <div className="grid grid-cols-3 gap-5">
+                            <div className="sm:grid grid-cols-3 gap-5">
                                 <label htmlFor="" className="flex flex-col gap-1">
                                     Фамилия
                                     <input 
@@ -68,7 +69,7 @@ const Profile = () => {
                                     />
                                 </label>
                             </div>
-                            <div className="flex flex-col w-[50%] mx-auto mt-5">
+                            <div className="flex flex-col sm:w-[50%] w-full mx-auto mt-5">
                                 <label htmlFor="" className="flex flex-col gap-1">
                                     Адрес электронной почты
                                     <input 

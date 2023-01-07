@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { MdRoundedCorner } from 'react-icons/md';
 import { LoginBlock, Container } from '../components'
 
@@ -25,8 +26,8 @@ const Home = () => {
         
         <Container className="z-2">
           <div className="relative w-full h-full flex flex-col " style={{marginTop: '100px'}}>
-            <div className='flex flex-1 items-start'>
-              <div className="flex-3 flex flex-col justify-center items-center">
+            <div className='flex-1 items-start'>
+              <div className="hidden sm:flex flex-3 flex-col justify-center items-center">
                 <img src="logo.png" alt="logo" />
                 <span className="text-2xl text-white" style={{textShadow: '0 5px 10px rgba(0, 0, 0, .75)'}}>Система &quot;ГОРОД&quot;</span>
               </div>
@@ -34,7 +35,10 @@ const Home = () => {
                 Удобные платежи
               </div>
             </div>
-            <div className="flex flex-1 items-center gap-10" style={{marginTop: '100px'}}>
+            <div className="sm:hidden flex w-full items-center justify-center">
+                <Link href="/login" className='p-5 border border-white text-white font-semibold text-xl uppercase shadow-2xl hover:bg-white hover:text-slate-800'>Войти в систему</Link>
+            </div>
+            <div className="hidden sm:flex flex-1 items-center gap-10" style={{marginTop: '100px'}}>
               <div className="flex flex-col align-end">
                 <span className="text-green-700 text-5xl" style={{color: 'green', fontWeight: 'bold', fontSize: '130px', textShadow: '0 5px 20px rgba(255, 255, 255, 1)'}}>0<sub>%</sub></span>
                 <p className="text-slate-100 font-semibold"><sup>*</sup> кроме некоторых услуг(размер комиссии указан до совершения платежа)</p>

@@ -20,7 +20,7 @@ const Sidebar = () => {
     }
 
   return (
-    <div className='relative flex flex-col gap-3 bg-slate-400 w-1/4' style={{width: '15%'}}>   
+    <div className='hidden sm:flex relative flex-col gap-3 bg-slate-400 w-1/4' style={{width: '15%'}}>   
       <Link href="/profile"> 
         <div 
           className={classNameFunc('/profile')}

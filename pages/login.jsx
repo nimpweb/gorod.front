@@ -41,9 +41,9 @@ const Login = () => {
       <Container className="max-w-md">
         <h1 className="font-bold text-xl text-center mb-10">Авторизация</h1>
 
-        <div className="shadow-2xl w-1/2 m-auto h-full p-20 rounded-2xl bg-white opacity-80 flex gap-10">
+        <div className="shadow-2xl sm:w-1/2 w-full m-auto h-full p-20 rounded-2xl bg-white opacity-80 flex gap-10">
 
-        <div className="relative flex-1 flex items-center">
+        <div className="hidden sm:flex relative flex-1 items-center">
             <Image 
                 src="/two.png"
                 alt="logo" 

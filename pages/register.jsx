@@ -41,7 +41,7 @@ export default function Help() {
   >
     <Container>
       <h1 className="font-bold text-xl text-center mb-5">Регистрация в &quot;Удобных платежах&quot;</h1>
-      <div className="bg-white rounded-2xl p-10 w-1/2 m-auto flex flex-col gap-2">
+      <div className="bg-white rounded-2xl p-10 sm:w-1/2 w-full m-auto flex flex-col gap-2">
         <form method="post" onSubmit={handleSubmitForm}>
             { errorMessage.length > 0 && <div className="w-full rounded-lg text-center bg-red-700 text-white p-2 font-semibold text-sm">{ errorMessage }</div> }
             <label htmlFor="" className="flex flex-col gap-1">
