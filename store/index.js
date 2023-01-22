@@ -21,6 +21,12 @@ export const useUser = create((set) => ({
             }
             return state;
         }),
+    removeUser: () => set(() => {
+        return { user: null }
+    })
+    setUser: (user) => set(state => {
+        return {...state, user}
+    })
 }));
 
 export const useMobile = create((set) => ({

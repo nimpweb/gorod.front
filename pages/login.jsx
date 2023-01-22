@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import {Layout, Container} from '../components'
 import Link  from 'next/link'
+import {useRouter} from 'next/router'
 import { CiLogin } from 'react-icons/ci';
 import { $api } from './../utils/api';
 import { FaSpinner } from 'react-icons/fa';
@@ -15,19 +16,24 @@ const Login = () => {
     const [loading, setLoading] = React.useState(false);
     const [password, setPassword] = React.useState('');
 
+    const router = useRouter();
+
     const handleSubmitLogin = (e) => {
         e.preventDefault();
         setLoading(true);
-        const func = async () => {};
+
         new Promise((resolve, reject) => {
             const formData = new FormData(e.target);
-            const object = {};
-            formData.forEach((value, key) => (object[key] = value));
-
-            const response = $api.post('/login', formData);
-            if (!response)
-                reject(setErrorMessage('Произошла ошибка на сервере, попробуйте позже...'));
-            resolve(response);
+            $api.post('/login', formData).then(data => {
+                if (!data) return reject(setErrorMessage('Произошла ошибка на сервере, попробуйте позже...'))
+                const { success, token, user } = data.data;
+                if (success && token && user) {
+                    localStorage.setItem(process.env.API_ACCESS_TOKEN, token);
+                    return resolve({user, token});
+                } else {
+                    reject(setErrorMessage('Произошла ошибка на сервере, попробуйте позже...'))
+                }
+            });
         }).finally(() => setLoading(false));
     };
 
@@ -71,7 +77,7 @@ const Login = () => {
                                         Логин
                                         <input
                                             type="text"
-                                            name="name"
+                                            name="username"
                                             placeholder="Укажите Ваш логин"
                                             className="border p-2 px-5 rounded-xl shadow-sm outline-none focus:border-slate-400 ease duration-200 bg-slate-100/95 focus:bg-white"
                                             onChange={(e) => setLogin(e.target.value)}

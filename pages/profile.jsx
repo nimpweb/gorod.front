@@ -1,18 +1,31 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Layout, Container } from '../components'
 import { Sidebar } from '../container'
 import { RiLockPasswordLine } from 'react-icons/ri'
 import { HiOutlineSave } from 'react-icons/hi'
 import { useUser } from '../store';
+import { $api } from '../utils/api';
+import Loading from './../components/Loading';
 
 const Profile = () => {
-    const { user } = useUser((state) => state.user);
+    const [loading, setLoading] = useState(false);
+    // const { user } = useUser((state) => state.user);
+    const [services, setServices] = useState({});
     const [errorMessage] = useState('');
 
     const handleSubmitForm = (event) => {
         event.preventDefault();
         alert('clicked Save')
     }
+
+    useEffect(() => {
+        setLoading(true);
+        $api('/profile')
+            .then(response => { console.log(response); return response?.data; })
+            .then(data => setServices({ ...data?.services }))
+            .finally( () => setLoading(false));
+    }, []);
+
 
     return (
         <Layout
@@ -98,12 +111,35 @@ const Profile = () => {
 
                             </div>
                         </form>
+
+                        <div className="mt-5 mb-5">
+                        <h2 className="mt-3 text-xl font-bold text-center w-full mb-3">Список доступных услуг</h2>
+                        {   loading ? <Loading 
+                                            style={{display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%'}} 
+                                            text="Загружаем Ваши услуги..." 
+                                        />
+                                    : (
+                                        services?.length > 0 ? (
+                                            services.map(service => (
+                                                <div className="flex w-full border border-slate-300 p-3">
+                                                    <div>{service.srvtype}</div>
+                                                    <div>{service.account}</div>
+                                                    <div>{service.srvname}</div>
+                                                </div>
+                                            )
+                                        ))  : <p className="w-full text-center text-slate-500">У вас не добавлено ни одной услуги...</p>
+                                    )
+                        }
                         
+                        </div>
+                            
                     </div>
+
                 </div>
             </Container>
         </Layout>
     );
 };
+
 
 export default Profile

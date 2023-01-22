@@ -29,3 +29,22 @@ a {
     background: black;
   }
 }
+
+.spinner {
+    height: 40px;
+	width: 40px;
+	border-radius: 50%;
+}
+
+.spinner--4 {
+	transform: scale(0);
+	background: rgba(0, 0, 0, .8);
+	opacity: 1;
+	animation: spinner4 800ms linear infinite;
+}
+@keyframes spinner4 {
+	to {
+		transform: scale(1.5);
+		opacity: 0;
+	}
+}

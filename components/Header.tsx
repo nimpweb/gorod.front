@@ -16,9 +16,12 @@ const Header = () => {
     const [mobileMenu, setMobileMenu] = React.useState(false)
     const { pathname } = useRouter();
 
-    const isAuthorizated = true;
+    const router = useRouter();
 
-    const user = useUser((state) => state.user);
+    const { user, removeUser } = useUser((state) => state.user);
+
+    const isAuthorizated = user ? true : false;
+
 
     React.useEffect(() => {
         setLoggedIn(true);
@@ -26,6 +29,9 @@ const Header = () => {
 
     const handleLogoutClick = (e: any) => {
         e.preventDefault();
+        localStorage.removeItem(process.env.API_ACCESS_TOKEN);
+        removeUser();
+        router.push('/');
         setLoggedIn(false);
     };
 

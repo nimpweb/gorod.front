@@ -9,8 +9,8 @@ $api.interceptors.request.use(
         const token = localStorage.getItem('ACCESS_TOKEN') ?? '111';
         if (request.headers) {
             request.headers['Authorization'] = `Bearer ${token}`;
-            // request.headers['Access-Control-Allow-Methods'] = 'GET,PUT,POST,DELETE,PATCH,OPTIONS';
-            // request.headers['Access-Control-Allow-Origin'] = 'http://localhost:3000';
+            request.headers['Access-Control-Allow-Methods'] = 'GET,PUT,POST,DELETE,PATCH,OPTIONS';
+            request.headers['Access-Control-Allow-Origin'] = 'http://localhost:3000';
         }
         // request.withCredentials = true;
         return request;
@@ -27,7 +27,7 @@ $api.interceptors.response.use(
     },
     (error) => {
         if (error?.response?.statusCode === 401) {
-            localStorage.removeItem('ACCESS_TOKEN');
+            // localStorage.removeItem('ACCESS_TOKEN');
         }
         console.log(error.message);
     },
