@@ -6,6 +6,7 @@ import {useRouter} from 'next/router'
 import { CiLogin } from 'react-icons/ci';
 import { $api } from './../utils/api';
 import { FaSpinner } from 'react-icons/fa';
+import { useUser } from '../store'
 
 // const backgroundOptions = {
 // }
@@ -15,6 +16,9 @@ const Login = () => {
     const [login, setLogin] = React.useState('');
     const [loading, setLoading] = React.useState(false);
     const [password, setPassword] = React.useState('');
+
+    const setUser = useUser(state => state.setUser);
+    const setToken = useUser(state => state.setToken);
 
     const router = useRouter();
 
@@ -29,6 +33,9 @@ const Login = () => {
                 const { success, token, user } = data.data;
                 if (success && token && user) {
                     localStorage.setItem(process.env.API_ACCESS_TOKEN, token);
+                    setToken(token);
+                    setUser({ displayName: user.username, userid: user.userid, phonenumber: user.phonenumber, email: user.email })
+                    router.push('/profile');
                     return resolve({user, token});
                 } else {
                     reject(setErrorMessage('Произошла ошибка на сервере, попробуйте позже...'))

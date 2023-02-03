@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { useRouter } from 'next/router'
 import { MdHelp, MdShowChart, MdAutoFixHigh } from 'react-icons/md'
 import { AiOutlineMenu, AiOutlineClose, AiOutlineUserAdd, AiFillCaretDown, AiTwotoneHome } from 'react-icons/ai'
@@ -15,22 +15,24 @@ const Header = () => {
     const [profilePopup, setProfilePopup] = React.useState(false);
     const [mobileMenu, setMobileMenu] = React.useState(false)
     const { pathname } = useRouter();
+    const [isAuthorized, setIsAuthorized] = useState(false);
 
     const router = useRouter();
 
-    const { user, removeUser } = useUser((state) => state.user);
+    const { user, removeUser } = useUser();
 
-    const isAuthorizated = user ? true : false;
+    // const isAuthorizated = user ? true : false;
 
 
     React.useEffect(() => {
-        setLoggedIn(true);
-    }, []);
+        setIsAuthorized(user && user.userid > 0);
+        // setLoggedIn(true);
+    }, [user]);
 
     const handleLogoutClick = (e: any) => {
         e.preventDefault();
-        localStorage.removeItem(process.env.API_ACCESS_TOKEN);
-        removeUser();
+        // localStorage.removeItem(process.env.API_ACCESS_TOKEN);
+        // removeUser();
         router.push('/');
         setLoggedIn(false);
     };
@@ -71,7 +73,7 @@ const Header = () => {
                             <MdHelp /> Помощь
                         </div>
                     </Link>
-                    {!user && (
+                    {!isAuthorized && (
                         <Link href="/login">
                             <div className="font-semibold text-sm flex gap-1 items-center hover:text-slate-500 ease-in duration-100 text-blue-700">
                                 <CiLogin /> Вход
@@ -79,7 +81,7 @@ const Header = () => {
                         </Link>
                     )}
 
-                    {user && (
+                    {isAuthorized && (
                         <div
                             className="relative font-semibold text-sm flex gap-1 items-center hover:text-slate-500 ease-in duration-100 cursor-pointer"
                             onClick={() => setProfilePopup(!profilePopup)}>
@@ -138,7 +140,7 @@ const Header = () => {
                 <div 
                     className="flex flex-col justify-between"
                 >
-                    { user && <p className="pt-[80px] z-[19] text-center">Здравствуйте, <span className="font-bold">{ user.displayName }</span></p> }
+                    { isAuthorized && <p className="pt-[80px] z-[19] text-center">Здравствуйте, <span className="font-bold">{ user.displayName }</span></p> }
                     <div 
                         className="z-[18] absolute top-0 left-0 right-0 bottom-0 bg-white text-slate-500 flex flex-col gap-5 justify-center items-center w-full h-screen text-center ease-in-out duration-300 overflow-hidden"
                     >
@@ -158,7 +160,7 @@ const Header = () => {
                             </div>
                         </Link>
 
-                        { isAuthorizated && (
+                        { isAuthorized && (
                             <>
                             <span className="bg-slate-300 h-[1px] w-full lg:w-1/4"></span>
                             <Link legacyBehavior href="/profile">
@@ -192,7 +194,7 @@ const Header = () => {
                         <span className="bg-slate-300 h-[1px] w-full lg:w-1/4"></span>
 
                         
-                        { isAuthorizated 
+                        { isAuthorized 
                         ?   (
                             <Link legacyBehavior href="/logout">
                                 <a
